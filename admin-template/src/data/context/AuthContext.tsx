@@ -1,0 +1,1 @@
+import firebase from "../../components/firebase/config";
