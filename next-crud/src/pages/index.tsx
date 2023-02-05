@@ -1,3 +1,5 @@
+import Botao from "../components/Botao";
+import Formulario from "../components/Formulario";
 import Layout from "../components/Layout";
 import Tabela from "../components/Tabela";
 import Cliente from "../core/Cliente";
@@ -10,6 +12,14 @@ export default function Home() {
     new Cliente('Nakaren', 20, '4'),
   ]
 
+  function clienteSelecionado(cliente:Cliente){
+    console.log('Editar...'+cliente.nome)
+  }
+
+  function clienteExcluido(cliente:Cliente){
+    console.log('Apagar...'+cliente.nome)
+  }
+
   return (
     <div className={`
       flex justify-center items-center h-screen
@@ -17,7 +27,16 @@ export default function Home() {
     text-white
     `}>
         <Layout titulo="Cadastro Simples">
-          <Tabela clientes={clientesMock}></Tabela>
+          <div className="flex justify-end">
+            <Botao className="mb-4" cor="green">Novo Cliente</Botao>
+          </div>
+          
+          {/* <Tabela clientes={clientesMock} 
+            clienteSelecionado={clienteSelecionado}
+            clienteExcluido={clienteExcluido} 
+          /> */}
+
+          <Formulario cliente={clientesMock[0]} />
         </Layout>
     </div>
   )
