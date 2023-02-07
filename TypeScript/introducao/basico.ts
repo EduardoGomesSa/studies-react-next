@@ -1,3 +1,3 @@
-const a:string = 'Testando o TypeScript'
+const a:string = 'Testando o TypeScript (web)'
 
 console.log(a)
