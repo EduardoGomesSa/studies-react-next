@@ -14,7 +14,7 @@ const letras = [
 interface QuestaoProps{
     valor: QuestaoModel
     tempoPraResposta?: number
-    respostaFornecida: (indice: void) => void
+    respostaFornecida: (indice: number) => void
     tempoEsgotado: () => void
 }
 
